@@ -1,2 +1,0 @@
-print("hgjhg")
-print("print")
