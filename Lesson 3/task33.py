@@ -3,6 +3,10 @@
 
 def even_sum(lst):
     # Здесь пишем код
+    count = round(len(lst)/2)
+    sum_list = 0
+    for i in range(count):
+        sum_list += lst[i*2]
     return sum_list
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
