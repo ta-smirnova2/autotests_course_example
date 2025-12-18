@@ -5,6 +5,8 @@
 
 def create_phone_number(num_tuple):
     # Здесь нужно написать код
+    string = ''.join(map(str, num_tuple))
+    str_phone = "("+string[0:3]+") "+string[3:6]+"-"+string[6:]
     return str_phone
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
@@ -20,7 +22,8 @@ data = [
 test_data = [
     "(123) 456-7890", "(111) 111-1111", "(023) 056-0890", "(000) 000-0000"
 ]
-
+# for i in data:
+#     create_phone_number(i)
 
 for i, d in enumerate(data):
     assert create_phone_number(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'

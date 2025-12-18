@@ -6,6 +6,15 @@
 
 def which_triangle(a, b, c):
     # Здесь нужно написать код
+    lst = sorted([a, b, c])
+    if lst[2] >= lst[0] + lst[1]:
+        type_triangle = "Не треугольник"
+    elif min(lst) == max(lst):
+        type_triangle = "Равносторонний"
+    elif lst[0] == lst[1] or lst[1] == lst[2]:
+        type_triangle = "Равнобедренный"
+    else:
+        type_triangle = "Обычный"
     return type_triangle
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

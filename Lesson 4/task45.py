@@ -15,6 +15,17 @@
 
 def josephus_task(num_people, kill_num):
     # Здесь нужно написать код
+    if num_people == 1:
+        survivor = 1
+    elif kill_num == 1:
+        survivor = num_people
+    else:
+        lst = list(range(1, num_people+1))
+        while len(lst) > 1:
+            x = (kill_num-1) % len(lst)
+            del lst[x]
+            lst = lst[x:] + lst[:x]
+        survivor = lst[0]
     return survivor
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
@@ -27,7 +38,6 @@ data = [
 test_data = [
     4, 10, 1, 13, 100, 1130, 379
 ]
-
 
 for i, d in enumerate(data):
     assert josephus_task(*d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
