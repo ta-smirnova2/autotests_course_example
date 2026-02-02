@@ -16,7 +16,8 @@ try:
             if l == '\n':
                 lst_sum.append(sum)
                 sum = 0
-            sum += int(l[:len(l)-1])
+            else:
+                sum += int(l[:len(l)-1])
     except Exception as e:
         print(f"{e}")
     finally:
@@ -26,7 +27,7 @@ except FileNotFoundError:
 except:
     print("Ошибка при работе с файлом")
 lst_sum = sorted(lst_sum)
-three_most_expensive_purchases = sum(lst_sum[len(lst_sum)-2:])
+three_most_expensive_purchases = lst_sum[len(lst_sum)-3] + lst_sum[len(lst_sum)-2] + lst_sum[len(lst_sum)-1]
 
 
 assert three_most_expensive_purchases == 202346
